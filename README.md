@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LiftON website (lifton.app)
 
-## Getting Started
+Next.js 16 + Tailwind 4. Deploys on Vercel from GitHub.
 
-First, run the development server:
+## Run locally
+    npm install && npm run dev        # http://localhost:3000
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Before launch checklist
+1. Supabase: run `supabase/schema.sql` (SQL editor). Copy the project URL and the **service_role** key.
+2. Vercel > Project > Settings > Environment Variables: copy everything in `.env.example` (server keys are NOT prefixed with NEXT_PUBLIC).
+3. Create the Telegram group/channel, paste its invite link in `NEXT_PUBLIC_TELEGRAM_URL`.
+4. Paste the real App Store link in `NEXT_PUBLIC_APP_STORE_URL` (and add the `apple-itunes-app` smart banner in `app/layout.tsx`).
+5. Make `support@lifton.app` work (Namecheap/Cloudflare email forwarding) or change `NEXT_PUBLIC_SUPPORT_EMAIL`.
+6. Replace the drawn phone screens (`components/AppScreens.tsx`) with real screenshots when ready.
+7. Domain: Vercel > Domains > add `lifton.app`, then set the DNS records Vercel shows at the registrar.
+8. Point the app's Privacy URL to https://lifton.app/privacy and the Terms URL to https://lifton.app/terms.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Where things are
+- `lib/config.ts` all links/contacts
+- `components/*` page sections, `app/support` help center, `app/privacy`, `app/terms`
+- `app/api/subscribe` Android waitlist, `app/api/feedback` feedback form (both write to Supabase)
