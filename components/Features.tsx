@@ -13,11 +13,19 @@ const features: F[] = [
     body: "LiftON looks at what you trained and how recovered each muscle is, then builds the session. Swap any exercise, switch the day or regenerate in one tap.",
     span: "md:col-span-2",
     visual: (
-      <div className="flex flex-wrap gap-2 text-xs">
-        {["Push", "Pull", "Legs", "Upper", "Full body"].map((d, i) => (
-          <span key={d} className={`rounded-full border px-3 py-1.5 ${i === 1 ? "border-brand bg-brand/20 text-white" : "border-white/10 text-muted"}`}>{d}</span>
+      <div className="space-y-3">
+        {[["Barbell Bench Press", "3 sets · 8-10 reps"], ["Assisted Pull-Up", "3 sets · 8-10 reps"], ["Seated Cable Row", "3 sets · 10-12 reps"]].map(([n, d], i) => (
+          <div key={n} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[.04] p-3">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand/20 text-sm font-bold text-brand-soft">{i + 1}</span>
+            <div className="flex-1"><p className="text-sm font-semibold">{n}</p><p className="text-xs text-muted">{d}</p></div>
+            <span className="text-xs text-muted">Swap</span>
+          </div>
         ))}
-        <span className="rounded-full border border-[#4ade80]/40 bg-[#4ade80]/10 px-3 py-1.5 text-[#4ade80]">Recommended: Pull</span>
+        <div className="flex flex-wrap gap-2 pt-1 text-xs">
+          {["Push", "Pull", "Legs", "Upper", "Full body"].map((d, i) => (
+            <span key={d} className={`rounded-full border px-3 py-1.5 ${i === 1 ? "border-brand bg-brand/20 text-white" : "border-white/10 text-muted"}`}>{d}</span>
+          ))}
+        </div>
       </div>
     ),
   },

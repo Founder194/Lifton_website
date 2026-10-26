@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SITE } from "@/lib/config";
 import { Reveal } from "./Reveal";
 import { FeedbackForm, WaitlistForm } from "./Forms";
@@ -39,7 +40,8 @@ export function Waitlist() {
     <section id="waitlist" className="mx-auto max-w-6xl px-5 pb-24">
       <Reveal>
         <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0d2a63] via-[#0a1a3d] to-[#05070d] p-8 md:p-14">
-          <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-brand/40 blur-[100px]" />
+          <Image src="/img/photo-shoes.jpg" alt="" fill sizes="1152px" className="object-cover object-[80%_30%] opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a3d] via-[#0a1a3d]/85 to-transparent" />
           <div className="relative max-w-xl">
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">Android</p>
             <h2 className="font-display mt-2 text-5xl font-bold italic leading-none md:text-6xl">Not on iPhone? Be first on Android.</h2>

@@ -34,7 +34,7 @@ export function Hero() {
 
         <div className="relative mx-auto h-[640px] w-full max-w-[480px] md:h-[680px]">
           <div className="absolute inset-x-8 top-0 h-[430px] overflow-hidden rounded-[40px] border border-white/10">
-            <Image src="/img/athlete.png" alt="Athlete training in a gym" fill priority sizes="460px" className="object-cover object-top" />
+            <Image src="/img/photo-deadlift.jpg" alt="Lifter setting up a barbell deadlift in a dark gym" fill priority sizes="460px" className="object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-[#05070d]/20 to-transparent" />
           </div>
           <div className="floaty absolute -left-3 top-[170px] z-10 scale-[.88] origin-top-left sm:left-0"><WorkoutScreen /></div>
