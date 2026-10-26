@@ -1,10 +1,10 @@
 import { Reveal } from "./Reveal";
-import { WorkoutScreen, ScanScreen, ProgressScreen } from "./AppScreens";
+import { Shot } from "./Shot";
 
 const steps = [
-  { n: "01", t: "Tell us about you", b: "Goal, experience, days per week and body stats. About two minutes, no account.", s: <WorkoutScreen /> },
-  { n: "02", t: "Train and eat with a plan", b: "Open the app, get today's workout, log your sets and scan your meals.", s: <ScanScreen /> },
-  { n: "03", t: "Watch it adapt", b: "Weights, workouts and targets update as you get stronger and your weight moves.", s: <ProgressScreen /> },
+  { n: "01", t: "Tell us about you", b: "Goal, experience, days per week and body stats. About two minutes, no account.", s: <Shot src="/img/step-plan.jpg" alt="LiftON first-week plan: three full body days" /> },
+  { n: "02", t: "Train and eat with a plan", b: "Open the app, get today's workout, log your sets and scan your meals.", s: <Shot src="/img/hero-1.jpg" alt="LiftON home screen with today's workout" /> },
+  { n: "03", t: "Watch it adapt", b: "Weights, workouts and targets update as you get stronger and your weight moves.", s: <Shot src="/img/hero-2.jpg" alt="LiftON training, eating and water rings" /> },
 ];
 
 export function How() {

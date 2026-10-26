@@ -1,30 +1,8 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
-import { PhoneFrame } from "./PhoneFrame";
+import { Shot } from "./Shot";
 import { AndroidSoon, AppStoreButton } from "./Buttons";
-import { WorkoutScreen, ScanScreen } from "./AppScreens";
-
-// Drop real iPhone screenshots at public/img/hero-1.png and public/img/hero-2.png (or .jpg) and they replace the drawn screens.
-function realShot(n: string) {
-  for (const ext of ["png", "jpg", "jpeg", "webp"]) {
-    if (fs.existsSync(path.join(process.cwd(), "public/img", `${n}.${ext}`))) return `/img/${n}.${ext}`;
-  }
-  return null;
-}
-
-function Shot({ src, alt, fallback }: { src: string | null; alt: string; fallback: React.ReactNode }) {
-  if (!src) return <>{fallback}</>;
-  return (
-    <PhoneFrame notch={false}>
-      <Image src={src} alt={alt} fill sizes="270px" className="object-cover object-top" />
-    </PhoneFrame>
-  );
-}
 
 export function Hero() {
-  const one = realShot("hero-1");
-  const two = realShot("hero-2");
   return (
     <section className="relative overflow-hidden pt-28 md:pt-36">
       <div className="grid-bg absolute inset-0" />
@@ -59,8 +37,8 @@ export function Hero() {
             <Image src="/img/photo-deadlift.jpg" alt="Lifter setting up a barbell deadlift in a dark gym" fill priority sizes="460px" className="object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-[#05070d]/20 to-transparent" />
           </div>
-          <div className="floaty absolute -left-3 top-[170px] z-10 scale-[.88] origin-top-left sm:left-0"><Shot src={one} alt="LiftON workout screen" fallback={<WorkoutScreen />} /></div>
-          <div className="floaty absolute -right-4 top-[250px] z-20 hidden scale-[.78] origin-top-right sm:block" style={{ animationDelay: "-3s" }}><Shot src={two} alt="LiftON meal scan screen" fallback={<ScanScreen />} /></div>
+          <div className="floaty absolute -left-3 top-[170px] z-10 scale-[.88] origin-top-left sm:left-0"><Shot src="/img/hero-1.jpg" alt="LiftON home screen with today's Upper Body workout" /></div>
+          <div className="floaty absolute -right-4 top-[250px] z-20 hidden scale-[.78] origin-top-right sm:block" style={{ animationDelay: "-3s" }}><Shot src="/img/hero-2.jpg" alt="LiftON scanning a meal next to the daily training, eating and water rings" /></div>
         </div>
       </div>
     </section>
