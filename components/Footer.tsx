@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE } from "@/lib/config";
+import { SITE, storeLink } from "@/lib/config";
 
 export function Footer() {
   const social = [["Instagram", SITE.instagram], ["TikTok", SITE.tiktok], ["YouTube", SITE.youtube], ["Telegram", SITE.telegram]].filter(([, u]) => u);
@@ -14,7 +14,7 @@ export function Footer() {
           <p className="font-semibold text-white">Product</p>
           <Link className="block hover:text-white" href="/#features">Features</Link>
           <Link className="block hover:text-white" href="/#how">How it works</Link>
-          <a className="block hover:text-white" href={SITE.appStore} target="_blank" rel="noopener">App Store</a>
+          <a className="block hover:text-white" href={storeLink("footer")} target="_blank" rel="noopener">App Store</a>
           <Link className="block hover:text-white" href="/#waitlist">Android waitlist</Link>
         </div>
         <div className="space-y-2 text-sm text-muted">

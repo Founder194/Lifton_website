@@ -1,12 +1,13 @@
-import { SITE } from "@/lib/config";
+import { storeLink } from "@/lib/config";
 
-export function AppStoreButton({ className = "" }: { className?: string }) {
+export function AppStoreButton({ className = "", where = "hero" }: { className?: string; where?: string }) {
   return (
     <a
-      href={SITE.appStore}
+      href={storeLink(where)}
       target="_blank"
       rel="noopener"
       data-track="app_store_click"
+      data-where={where}
       className={`group inline-flex items-center gap-3 rounded-2xl bg-white px-5 py-3 text-black transition hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(30,111,255,.45)] ${className}`}
     >
       <svg viewBox="0 0 384 512" className="h-7 w-7 fill-current" aria-hidden>

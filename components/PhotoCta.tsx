@@ -12,7 +12,7 @@ export function PhotoCta() {
           <div className="max-w-xl px-8 py-20 md:px-14 md:py-28">
             <h2 className="font-display text-6xl font-bold italic leading-[0.95] md:text-7xl">Start your first <span className="glow-text">workout</span> today.</h2>
             <p className="mt-4 text-lg text-white/70">Answer a few questions and your plan is ready in about two minutes. Free to try, no account needed.</p>
-            <div className="mt-8"><AppStoreButton /></div>
+            <div className="mt-8"><AppStoreButton where="closing_cta" /></div>
           </div>
         </div>
       </Reveal>

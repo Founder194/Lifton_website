@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE } from "@/lib/config";
+import { storeLink } from "@/lib/config";
 
 const links = [
   ["Features", "/#features"],
@@ -22,7 +22,7 @@ export function Nav() {
             <Link key={l} href={h} className="transition hover:text-white">{l}</Link>
           ))}
         </nav>
-        <a href={SITE.appStore} target="_blank" rel="noopener" data-track="app_store_click" data-where="nav" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:scale-105">
+        <a href={storeLink("nav")} target="_blank" rel="noopener" data-track="app_store_click" data-where="nav" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:scale-105">
           Download
         </a>
       </div>
