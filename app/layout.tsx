@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     url: SITE.url,
   },
   twitter: { card: "summary_large_image", title: SITE.name, description: SITE.description },
-  // Smart banner on iPhone Safari once the real App Store ID exists:
-  // other: { "apple-itunes-app": "app-id=XXXXXXXXXX" },
+  // Smart banner on iPhone Safari
+  other: { "apple-itunes-app": `app-id=${SITE.appStoreId}` },
 };
 
 export const viewport: Viewport = { themeColor: "#05070d" };

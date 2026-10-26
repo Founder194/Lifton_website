@@ -6,10 +6,11 @@ export const SITE = {
   tagline: "Gym workout planner & AI meal scanner",
   description:
     "LiftON builds your gym workout each day, scans your meals with your camera and tracks your progress. One plan for training and nutrition. Free on iPhone.",
-  // Replace with the real link once the app page is live, e.g. https://apps.apple.com/app/lifton/id123456789
+  // Real App Store page. Once the AppsFlyer OneLink exists, set NEXT_PUBLIC_APP_STORE_URL to it in Vercel.
   appStore:
     process.env.NEXT_PUBLIC_APP_STORE_URL ??
-    "https://apps.apple.com/us/search?term=lifton%20workout",
+    "https://apps.apple.com/us/app/lifton-gym-workout-planner/id6760906651",
+  appStoreId: "6760906651",
   // Create a Telegram group/channel, then paste its invite link in Vercel.
   telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "",
   supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@lifton.app",
