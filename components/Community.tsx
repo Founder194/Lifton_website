@@ -7,7 +7,7 @@ export function TelegramButton({ className = "" }: { className?: string }) {
   const base = `inline-flex items-center gap-3 rounded-2xl px-5 py-3.5 font-semibold ${className}`;
   const icon = (<svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden><path d="M21.9 4.1 18.7 19.3c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13 1.8 11.5c-1-.3-1-1 .2-1.5L20.3 3c.9-.3 1.7.2 1.6 1.1z" /></svg>);
   if (!SITE.telegram) return <span className={`${base} cursor-default bg-white/10 text-white/60`}>{icon} Telegram chat opening soon</span>;
-  return <a href={SITE.telegram} target="_blank" rel="noopener" className={`${base} bg-[#27a7e7] text-white transition hover:scale-[1.03]`}>{icon} Message us on Telegram</a>;
+  return <a href={SITE.telegram} target="_blank" rel="noopener" data-track="telegram_click" className={`${base} bg-[#27a7e7] text-white transition hover:scale-[1.03]`}>{icon} Message us on Telegram</a>;
 }
 
 export function Community() {

@@ -14,11 +14,12 @@ Next.js 16 + Tailwind 4. Deploys on Vercel from GitHub.
    - In Vercel add `TELEGRAM_BOT_TOKEN`, `TELEGRAM_OWNER_CHAT_ID`, `TELEGRAM_WEBHOOK_SECRET` (any long random string) and `NEXT_PUBLIC_TELEGRAM_URL=https://t.me/<BotUsername>`, then redeploy.
    - Connect the bot to the site once: `curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://lifton.app/api/telegram&secret_token=<SECRET>"`
    - Use: visitor messages arrive as "#12345 Name ...". Swipe-reply to one to answer. Feedback and waitlist signups also ping you there.
-4. Paste the real App Store link in `NEXT_PUBLIC_APP_STORE_URL` (and add the `apple-itunes-app` smart banner in `app/layout.tsx`).
-5. Make `support@lifton.app` work (Namecheap/Cloudflare email forwarding) or change `NEXT_PUBLIC_SUPPORT_EMAIL`.
-6. Replace the drawn phone screens (`components/AppScreens.tsx`) with real screenshots when ready.
-7. Domain: Vercel > Domains > add `lifton.app`, then set the DNS records Vercel shows at the registrar.
-8. Point the app's Privacy URL to https://lifton.app/privacy and the Terms URL to https://lifton.app/terms.
+4. Google Analytics: analytics.google.com > Admin > Create property > Web data stream (lifton.app) > copy the Measurement ID (G-...) into `NEXT_PUBLIC_GA_ID`. Events sent: `app_store_click`, `android_waitlist_click`, `telegram_click`, `waitlist_signup`, `feedback_sent` (mark them as key events in GA).
+5. Paste the real App Store link in `NEXT_PUBLIC_APP_STORE_URL` (and add the `apple-itunes-app` smart banner in `app/layout.tsx`).
+6. Make `support@lifton.app` work (Namecheap/Cloudflare email forwarding) or change `NEXT_PUBLIC_SUPPORT_EMAIL`.
+7. Replace the drawn phone screens (`components/AppScreens.tsx`) with real screenshots when ready.
+8. Domain: Vercel > Domains > add `lifton.app`, then set the DNS records Vercel shows at the registrar.
+9. Point the app's Privacy URL to https://lifton.app/privacy and the Terms URL to https://lifton.app/terms.
 
 ## Where things are
 - `lib/config.ts` all links/contacts

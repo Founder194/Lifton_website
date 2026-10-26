@@ -35,6 +35,9 @@ export default function Privacy() {
       <h2>Website, waitlist and feedback</h2>
       <p>If you join the Android waitlist or send feedback on lifton.app, we store the email and message you submit so we can reply and tell you when the app launches. Ask us to delete it at any time.</p>
 
+      <h2>Website analytics</h2>
+      <p>On lifton.app we use Google Analytics (GA4) to understand which pages and buttons are used. It only runs if you click Accept on the cookie banner, and we keep IP anonymisation on. You can change your choice by clearing this site&apos;s data in your browser. We do not use advertising cookies.</p>
+
       <h2>Tracking choice</h2>
       <p>You can change tracking permission in iOS Settings, Privacy &amp; Security, Tracking. Declining does not limit app features.</p>
 

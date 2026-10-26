@@ -6,6 +6,7 @@ export function AppStoreButton({ className = "" }: { className?: string }) {
       href={SITE.appStore}
       target="_blank"
       rel="noopener"
+      data-track="app_store_click"
       className={`group inline-flex items-center gap-3 rounded-2xl bg-white px-5 py-3 text-black transition hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(30,111,255,.45)] ${className}`}
     >
       <svg viewBox="0 0 384 512" className="h-7 w-7 fill-current" aria-hidden>
@@ -23,6 +24,7 @@ export function AndroidSoon({ className = "" }: { className?: string }) {
   return (
     <a
       href="#waitlist"
+      data-track="android_waitlist_click"
       className={`inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-white transition hover:bg-white/10 ${className}`}
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden>

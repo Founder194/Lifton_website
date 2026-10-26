@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { track } from "./Analytics";
 
 type State = "idle" | "loading" | "done" | "error";
 
@@ -20,6 +21,7 @@ export function WaitlistForm({ source = "site" }: { source?: string }) {
     setState("loading");
     try {
       await post("/api/subscribe", { email: f.get("email"), company: f.get("company"), platform: "android", source });
+      track("waitlist_signup", { source });
       setState("done");
     } catch (err) {
       setMsg((err as Error).message);
@@ -49,6 +51,7 @@ export function FeedbackForm() {
     setState("loading");
     try {
       await post("/api/feedback", { type, message: f.get("message"), email: f.get("email"), company: f.get("company") });
+      track("feedback_sent", { type });
       setState("done");
     } catch (err) {
       setMsg((err as Error).message);
