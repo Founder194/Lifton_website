@@ -13,7 +13,7 @@ export const FAQS: [string, string][] = [
   ["What happens to my data and my meal photos?", "Your workouts, profile and progress are stored on your device. Meal photos and descriptions are sent securely to our analysis service only to estimate nutrition. Read the full details in our Privacy Policy."],
   ["Can I delete my data?", "Yes. In the app go to Profile, Data, Delete All Data. You can also email us and we'll help."],
   ["Does it support kg and lb?", "Yes. LiftON picks the right units for your region and you can switch any time."],
-  ["I found a bug or have an idea. Where do I tell you?", `Use the feedback form on our Support page, join the community chat, or email ${SITE.supportEmail}. We read everything.`],
+  ["I found a bug or have an idea. Where do I tell you?", `Use the feedback form on our Support page, message us on Telegram, or email ${SITE.supportEmail}. We read everything.`],
 ];
 
 export function Faq({ limit }: { limit?: number }) {

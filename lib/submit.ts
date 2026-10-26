@@ -26,7 +26,11 @@ export async function insertRow(table: string, row: Record<string, unknown>) {
   return { ok: false as const, status: 502 };
 }
 
+import { tgNotifyOwner } from "./telegram";
+
 export async function notify(subject: string, text: string) {
+  // Instant ping in Telegram when the bot is configured.
+  await tgNotifyOwner(`${subject}\n\n${text}`);
   const key = process.env.RESEND_API_KEY;
   const to = process.env.NOTIFY_EMAIL;
   if (!key || !to) return;

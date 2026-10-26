@@ -6,8 +6,8 @@ import { FeedbackForm, WaitlistForm } from "./Forms";
 export function TelegramButton({ className = "" }: { className?: string }) {
   const base = `inline-flex items-center gap-3 rounded-2xl px-5 py-3.5 font-semibold ${className}`;
   const icon = (<svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden><path d="M21.9 4.1 18.7 19.3c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13 1.8 11.5c-1-.3-1-1 .2-1.5L20.3 3c.9-.3 1.7.2 1.6 1.1z" /></svg>);
-  if (!SITE.telegram) return <span className={`${base} cursor-default bg-white/10 text-white/60`}>{icon} Community chat opening soon</span>;
-  return <a href={SITE.telegram} target="_blank" rel="noopener" className={`${base} bg-[#27a7e7] text-white transition hover:scale-[1.03]`}>{icon} Join the Telegram chat</a>;
+  if (!SITE.telegram) return <span className={`${base} cursor-default bg-white/10 text-white/60`}>{icon} Telegram chat opening soon</span>;
+  return <a href={SITE.telegram} target="_blank" rel="noopener" className={`${base} bg-[#27a7e7] text-white transition hover:scale-[1.03]`}>{icon} Message us on Telegram</a>;
 }
 
 export function Community() {
@@ -16,9 +16,9 @@ export function Community() {
       <div className="grid gap-5 md:grid-cols-2">
         <Reveal>
           <div className="card h-full p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">Build it with us</p>
-            <h2 className="font-display mt-2 text-5xl font-bold italic leading-none">Your feedback shapes LiftON</h2>
-            <p className="mt-4 text-muted">We&apos;re a small team and we ship what lifters ask for. Chat with us and other members, report a bug or tell us what you want next.</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-soft">Talk to us directly</p>
+            <h2 className="font-display mt-2 text-5xl font-bold italic leading-none">Message the team on Telegram</h2>
+            <p className="mt-4 text-muted">We&apos;re a small team and we ship what lifters ask for. Send a message and it goes straight to us: ask a question, report a bug or tell us what you want next. We reply in the same chat.</p>
             <div className="mt-6"><TelegramButton /></div>
             <p className="mt-5 text-sm text-muted">Or email <a className="text-white underline underline-offset-4" href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a></p>
           </div>
