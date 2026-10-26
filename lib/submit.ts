@@ -18,7 +18,8 @@ export async function insertRow(table: string, row: Record<string, unknown>) {
   if (!url || !key) return { ok: false as const, status: 503 };
   const res = await fetch(`${url}/rest/v1/${table}`, {
     method: "POST",
-    headers: { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+    // Legacy service_role keys are JWTs (eyJ...) and also go in Authorization; new sb_secret_ keys only use apikey.
+    headers: { apikey: key, ...(key.startsWith("eyJ") ? { Authorization: `Bearer ${key}` } : {}), "Content-Type": "application/json", Prefer: "return=minimal" },
     body: JSON.stringify(row),
   });
   // 409 = duplicate email: treat as success so we never leak who is subscribed.
