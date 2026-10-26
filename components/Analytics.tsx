@@ -2,7 +2,8 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// Public measurement id (safe to ship). Only active in production so local testing never pollutes the data.
+const GA_ID = process.env.NODE_ENV === "production" ? (process.env.NEXT_PUBLIC_GA_ID ?? "G-EK8X14Q8HZ") : undefined;
 const KEY = "lifton-consent";
 
 type G = (...a: unknown[]) => void;
