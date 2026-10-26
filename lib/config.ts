@@ -13,8 +13,8 @@ export const SITE = {
   appStoreId: "6760906651",
   // AppsFlyer OneLink: counts installs from the website. Override per environment if it ever changes.
   oneLink: process.env.NEXT_PUBLIC_ONELINK_URL ?? "https://lifton.onelink.me/vPVK/web",
-  // Create a Telegram group/channel, then paste its invite link in Vercel.
-  telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "",
+  // Support bot (visitors message the team, replies come back through the bot).
+  telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/LiftONSupportBot",
   supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@lifton.app",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
   tiktok: process.env.NEXT_PUBLIC_TIKTOK_URL ?? "",
