@@ -2,7 +2,7 @@
 // Override per environment in Vercel (Settings > Environment Variables).
 export const SITE = {
   name: "LiftON",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lifton.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.lifton.app",
   tagline: "Gym workout planner & AI meal scanner",
   description:
     "LiftON builds your gym workout each day, scans your meals with your camera and tracks your progress. One plan for training and nutrition. Free on iPhone.",
