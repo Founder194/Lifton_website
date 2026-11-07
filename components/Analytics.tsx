@@ -25,8 +25,8 @@ function readConsent(): "granted" | "denied" | null {
 }
 
 export function Analytics() {
-  // The /go landing page (TikTok bio link) never shows the banner and measures by default (analytics_storage granted; ads stay denied).
-  const onGo = usePathname().startsWith("/go");
+  // The /download landing page (and its /go alias) (TikTok bio link) never shows the banner and measures by default (analytics_storage granted; ads stay denied).
+  const onGo = /^\/(go|download)/.test(usePathname());
   const [choice, setChoice] = useState<"granted" | "denied" | null | "loading">("loading");
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export function Analytics() {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         window.gtag = gtag;
-        var onGo = location.pathname.indexOf('/go') === 0;
+        var onGo = (location.pathname.indexOf('/go') === 0 || location.pathname.indexOf('/download') === 0);
         gtag('consent', 'default', { analytics_storage: onGo ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
         gtag('js', new Date());
         gtag('config', '${GA_ID}', { anonymize_ip: true });
