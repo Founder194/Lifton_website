@@ -1,6 +1,7 @@
 "use client";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 // Public measurement id (safe to ship). Only active in production so local testing never pollutes the data.
 const GA_ID = process.env.NODE_ENV === "production" ? (process.env.NEXT_PUBLIC_GA_ID ?? "G-EK8X14Q8HZ") : undefined;
@@ -24,6 +25,8 @@ function readConsent(): "granted" | "denied" | null {
 }
 
 export function Analytics() {
+  // The /go landing page (TikTok bio link) never shows the banner: consent stays "denied" there, so no analytics cookies are set.
+  const onGo = usePathname().startsWith("/go");
   const [choice, setChoice] = useState<"granted" | "denied" | null | "loading">("loading");
 
   useEffect(() => {
@@ -61,7 +64,7 @@ export function Analytics() {
         gtag('js', new Date());
         gtag('config', '${GA_ID}', { anonymize_ip: true });
       `}</Script>
-      {choice === null && (
+      {choice === null && !onGo && (
         <div role="dialog" aria-label="Cookie preferences" className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-2xl border border-white/10 bg-[#0c1018]/95 p-4 shadow-2xl backdrop-blur-xl sm:bottom-5">
           <p className="text-sm text-white/80">
             We use privacy-friendly analytics cookies to see which pages help people. No ads, no selling data.{" "}
